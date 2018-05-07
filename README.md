@@ -7,32 +7,36 @@
 | Column         | Type           |Options         |
 | :------------- | :------------- | :------------- |
 | name           | string         | index: true, null: false, unique: true |
-|mail            | string         | null: false    |
-|password        | string         |null:false minimum 8words|
+| email          | string         | devise         |
+| password       | string         | devise         |
 ### Association
 - has_many :groups, through: groups_users
 - has_many :messages
-- has_many :members
 
 ## groups table
 | column  | Type    | Options   |
 | :------ | :------ | :-------- |
 | id      | integer ||
-|room-name| string  |null: false|
+| name    | string  |null: false|
 ### Association
 - has_many :users, through: groups_users
 - has_many :messages
-- has_many :members
 
-## messages table (中間テーブル)
+## groups_users table (中間テーブル)
+| user_id  | integer | null:false, foreign_key: true |
+| group_id | integer | null:false, foreign_key: true |
+
+- belongs_to user
+- belongs_to group
+
+## messages table
 | column   | Type    | Options    |
 | :------- | :------ |:---------- |
 | message  | text    | null:false |
-|image     | string  ||
-| user_id  | integer | null:false, foreign_key: true |
-| group_id | integer | null:false, foreign_key: true |
+| image    | string  ||
+
 ### Association
 - belongs_to user
-- belongs_to room
+- belongs_to group
 ***
 ***
