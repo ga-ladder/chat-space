@@ -1,4 +1,9 @@
--name = 'genta'
+-@name = 'genta'
+-@date = '2018/05/17'
+-@text = 'なるほど'
+
+-@group_name = 'roomn'
+-@group_message = 'texttext'
 .wrapper
   .notification
     チャットグループが作成されました。
@@ -11,16 +16,8 @@
         %i.fa.fa-edit.fa_fw
         %i.fa.fa-cog.fa_fw
     .groups
-      .group
-        .group__name<
-          room-name
-        .group__message
-          メッセージはまだありません
-      .group
-        .group__name<
-          room-name
-        .group__message
-          メッセージはまだありません
+      - 3.times do
+        = render partial: "group", locals: { group_name: @group_name, group_message: @group_message }
 
   -# タイトルバー
   .chat
@@ -31,28 +28,15 @@
         %ul.left-header__members
           Member :
           %li.member
-            #{name}
+            #{@name}
       .right-header
         %a.right-header__button
           Edit
     -#<!-- コメント表示 -->
     .messages
-      .message
-        .base-info
-          %span.base-info__person<
-            #{name}
-          %span.base-info__date<
-            2018/05/17
-        .text
-          なるほど
-      .message
-        .base-info
-          %span.base-info__person<
-            #{name}
-          %span.base-info__date<
-            2018/05/17
-        .text
-          なるほど
+      - 5.times do
+        = render partial: "message", locals: { name: @name, date: @date, text: @text }
+
     -#<!-- コメント書くところ -->
     .send
       %input.send__input{:type => "text", :placeholder =>" type a message" }
