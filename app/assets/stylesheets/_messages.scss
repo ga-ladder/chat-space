@@ -1,0 +1,27 @@
+
+.messages {
+  height: calc(-190px - 46px + 100vh);
+  padding: 46px 40px 0 40px;
+  .message {
+    margin-bottom: 40px;
+  }
+
+  .base-info {
+    margin-bottom: 10px;
+    .base-info__person {
+      font-size: 16px;
+      padding-right: 10px;
+      font-weight: bold;
+      color: $text-color;
+    }
+    .base-info__date {
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+
+  .text {
+    font-size: 14px;
+    color: $text-color;
+  }
+}

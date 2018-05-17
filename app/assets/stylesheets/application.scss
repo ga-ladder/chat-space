@@ -1,0 +1,15 @@
+@import "_reset";
+@import "_variable";
+
+@import "_chat";
+@import "_messages";
+@import "_sidebar";
+@import "_send";
+
+.wrapper {
+  display: -webkit-frex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
