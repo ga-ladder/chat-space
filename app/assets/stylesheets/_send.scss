@@ -1,13 +1,18 @@
 .send {
   height: 50px;
   padding: 20px 40px;
-  float: bottom;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ddd;
   .send__input {
-    margin: 0 10px;
+    padding: 0 10px;
     color: $text-color;
     height: 50px;
-    width: calc(-130px + 100%);
-    position: relative;
+    width: calc(-155px + 100%);
+    float: left;
+    border: none;
   }
      .fa-image {
         padding-top: 20px;
@@ -16,15 +21,13 @@
         right: 180px;
       }
   .send__button {
+    width: 100px;
     background-color: $button-color;
     height: 50px;
-    padding-left: 15px;
-    float: right;
+    margin-left: 15px;
     padding: 0 30px;
     line-height: 50px;
-    .send__button--text {
-      color: white;
-      text-decoration: none;
-    }
+    color: white;
+    border: none;
   }
 }

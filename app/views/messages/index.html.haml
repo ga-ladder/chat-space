@@ -1,5 +1,7 @@
 -name = 'genta'
 %div.wrapper
+  %div.notification
+    チャットグループが作成されました。
   -# サイドバー
   %div.side-bar
     %div.header
@@ -53,10 +55,8 @@
           なるほど
     -#<!-- コメント書くところ -->
     %div.send
-      %input.send__input
+      %input.send__input{:type => "text", :placeholder =>" type a message" }
         %i.fa.fa-image
-      %span.send__button
-        %submit.send__button--text
-          send
+      %input.send__button{:type => "submit", :value => "Send"}
 
 

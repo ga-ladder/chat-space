@@ -1,7 +1,8 @@
 
 .messages {
   height: calc(-190px - 46px + 100vh);
-  padding: 46px 40px 0 40px;
+  padding: 46px 40px;
+  position: relative;
   .message {
     margin-bottom: 40px;
   }

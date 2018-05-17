@@ -14,3 +14,11 @@
   display: -o-flex;
   display: flex;
 }
+
+.notification {
+  text-align: center;
+  color: white;
+  background-color: $button-color;
+  position: absolute;
+  width: 100vw;
+}
