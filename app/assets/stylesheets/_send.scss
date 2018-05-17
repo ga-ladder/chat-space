@@ -7,7 +7,14 @@
     color: $text-color;
     height: 50px;
     width: calc(-130px + 100%);
+    position: relative;
   }
+     .fa-image {
+        padding-top: 20px;
+        height: 50px;
+        position: absolute;
+        right: 180px;
+      }
   .send__button {
     background-color: $button-color;
     height: 50px;
@@ -15,7 +22,6 @@
     float: right;
     padding: 0 30px;
     line-height: 50px;
-
     .send__button--text {
       color: white;
       text-decoration: none;
