@@ -8,12 +8,12 @@
     line-height: 100px;
     height: 100px;
     padding: 0 20px;
-    .header__name {
+    &__name {
       display: inline-block;
       font-size: 16px;
       font-weight: bold;
     }
-    .header__lists {
+    &__lists {
       display: inline-block;
       float: right;
     }
@@ -26,11 +26,11 @@
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
-      .group__name{
+      &__name{
         color: #fff;
         font-size: 15px;
       }
-      .group__message {
+      &__message {
         color: #fff;
         font-size: 11px;
         margin-top: 5px;

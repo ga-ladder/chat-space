@@ -9,13 +9,13 @@
 
   .base-info {
     margin-bottom: 10px;
-    .base-info__person {
+    &__person {
       font-size: 16px;
       padding-right: 10px;
       font-weight: bold;
       color: $text-color;
     }
-    .base-info__date {
+    &__date {
       font-size: 12px;
       color: #999999;
     }

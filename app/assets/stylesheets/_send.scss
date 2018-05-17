@@ -6,7 +6,7 @@
   left: 0;
   bottom: 0;
   background-color: #ddd;
-  .send__input {
+  &__input {
     padding: 0 10px;
     color: $text-color;
     height: 50px;
@@ -20,7 +20,7 @@
         position: absolute;
         right: 180px;
       }
-  .send__button {
+  &__button {
     width: 100px;
     background-color: $button-color;
     height: 50px;
