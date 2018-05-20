@@ -7,6 +7,10 @@
 @import "_sidebar";
 @import "_send";
 
+@import "user";
+@import "config/colors";
+@import "modules/flash";
+
 .wrapper {
   display: -webkit-frex;
   display: -moz-flex;
