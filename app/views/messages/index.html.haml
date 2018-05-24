@@ -23,13 +23,16 @@
         Edit
   -#<!-- コメント表示 -->
   .messages
-    - 5.times do
-      = render partial: "message", locals: { name: @name, date: @date, text: @text }
+    = render partial: 'message', collection: @messages
 
   -#<!-- コメント書くところ -->
-  .send
-    %input.send__input{:type => "text", :placeholder =>" type a message" }
-      %i.fa.fa-image
-    %input.send__button{:type => "submit", :value => "Send"}
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
 
 
