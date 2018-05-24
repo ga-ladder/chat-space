@@ -1,8 +1,12 @@
 .message
-  .base-info
-    %span.base-info__person<
-      #{name}
-    %span.base-info__date<
-      #{date}
-  .text
-    = text
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      /= format_posted_time(message.created_at)
+      = message.created_at
+  .lower-meesage
+    - if message.text.present?
+      %p.lower-message__content
+        = message.text
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
