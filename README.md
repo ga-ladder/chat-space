@@ -17,7 +17,7 @@
 ## groups table
 | column  | Type    | Options   |
 | :------ | :------ | :-------- |
-| name    | string  |null: false|
+| name    | string  |null: false, index: true, unique: true|
 
 ### Association
 - has_many :messages
