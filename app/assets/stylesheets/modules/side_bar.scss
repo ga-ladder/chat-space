@@ -19,6 +19,7 @@
         display: inline-block;
       }
       .icon {
+        padding: 0 5px ;
         color: $white;
         font-size: $side_header_font;
       }
@@ -29,6 +30,7 @@
     background-color: $side_blue_light;
     height: calc(100vh - 100px);
     padding: 0 20px;
+    overflow-y: scroll;
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
