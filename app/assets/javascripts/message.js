@@ -35,12 +35,10 @@ $(function() {
       $('.form__submit ').attr('disabled',false)
       $('#new_message')[0].reset();
       $('.messages').animate({scrollTop: 10**7});
-
     })
     .fail(function(){
       alert('error');
       $('.form__submit').attr('disabled',false);
-
     })
   });
 });
