@@ -1,8 +1,14 @@
 .chat {
   height: 100vh;
-  width: calc(100% - 300px);
+  width: calc(100vw - 300px);
   box-sizing: border-box;
+  position: absolute;
+  right: 0px;
   .header {
+    position: fixed;
+    top: 0px;
+    width: calc(100vw - 300px);
+    background-color: white;
     box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
@@ -40,10 +46,9 @@
   }
 
   .messages {
-    height: calc(100vh - 100px - 90px - 46px);
     background-color: #FAFAFA;
-    padding: 46px 40px 0 40px ;
-    overflow-y: scroll;
+    padding: 146px 40px 90px 40px ;
+    overflow-y: hidden;
     .message {
       .upper-message {
         display: flex;
@@ -70,15 +75,18 @@
   }
 
   .form {
+    position: fixed;
+    bottom: 0;
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
+    width: calc(100vw - 300px);
     padding: 20px 50px 20px 40px;
     &__message {
       border: none;
       float: left;
       height: 50px;
-      width: calc(100% - 150px);
+      width: calc(100% - 140px);
     }
     &__mask {
       background-color: $white;
