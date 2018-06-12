@@ -62,7 +62,6 @@ $(function() {
     AddedUser(user_id,user_name);
   })
   $(document).on('click','.js-remove-btn', function() {
-    console.log(this)
     $(this).parent().remove();
   })
 });
