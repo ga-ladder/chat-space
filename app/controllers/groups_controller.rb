@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @users = User.where("name like '%#{params[:keyword]}%'")
+    @users = User.where("name like '%#{params[:keyword]}%'").where.not(id: current_user.id)
     @group = Group.new
   end
 
@@ -35,7 +35,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, {:user_ids => [] })
+    params.require(:group).permit(:name, {user_ids: [] })
   end
 
   def set_group
