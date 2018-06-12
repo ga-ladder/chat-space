@@ -54,7 +54,7 @@ $(function() {
       </div>`
     added.append(html);
   }
-//追加をclick => addedUser << users.pop(a_user)
+
   $(document).on('click','.chat-group-user__btn--add', function(e) {
     $(this).parent().remove();
     user_id = $(this).data('user-id');
