@@ -1,11 +1,15 @@
 .notification {
   .notice {
+    z-index: 1;
     background-color: $light_blue;
     color: $white;
     text-align: center;
+    position: absolute;
+    width: 100vw;
   }
 
   .alert {
+    z-index: auto;
     background-color: $alert_orange;
     color: $white;
     text-align: center;
