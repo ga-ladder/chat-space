@@ -20,28 +20,28 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json'
-    })
-    .done(function(users) {
-      $('#user-search-result').empty();
-      if (input == "") {
-      }
-      else if (users.length !== 0) {
-         users.forEach(function(user){
-           appendUser(user);
-         });
-       }
-       else {
-         appendNoUser("一致するユーザーはいません。");
-      }
-    })
-    .fail(function() {
-      alert('通信に失敗しました。');
-    })
+    if (input !== "") {
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input },
+        dataType: 'json'
+      })
+      .done(function(users) {
+        $('#user-search-result').empty();
+        if (users.length !== 0) {
+           users.forEach(function(user){
+             appendUser(user);
+           });
+         }
+         else {
+           appendNoUser("一致するユーザーはいません。");
+        }
+      })
+      .fail(function() {
+        alert('通信に失敗しました。');
+      })
+    }
   });
 
   var added = $('#chat-group-user-8');
