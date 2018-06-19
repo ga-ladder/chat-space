@@ -22,7 +22,7 @@ $(function() {
     var input = $("#user-search-field").val();
     $.ajax({
       type: 'GET',
-      url: '/groups/new',
+      url: '/users',
       data: { keyword: input },
       dataType: 'json'
     })
@@ -40,7 +40,7 @@ $(function() {
       }
     })
     .fail(function() {
-      alert('検索に失敗しました。');
+      alert('通信に失敗しました。');
     })
   });
 
