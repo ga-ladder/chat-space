@@ -5,7 +5,7 @@ $(function() {
       image_html = `<img class="lower-message__image" src="${message.image}">`;
     }
     var html = `
-      <div class="message">
+      <div class="message" id="${message.id}">
         <div class="upper-message">
           <div class="upper-message__user-name">${message.name}</div>
           <div class="upper-message__date">${message.created_at}</div>
@@ -42,4 +42,31 @@ $(function() {
       $('.form__submit').attr('disabled',false);
     })
   });
+
+  setInterval(update,5000);
+  function update(){
+    $.ajax({
+      url: '',
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data){
+      id = $('.message:last').attr('id');
+      console.log(id)
+      data.messages.forEach(function(message) {
+        if ( message.id > id) {
+          console.log(message.id)
+          var html = buildHTML(message);
+          $('.messages').append(html);
+        }
+      });
+      $('html, body').animate({scrollTop: $('.messages').height()});
+    })
+    .fail(function(data){
+      alert('失敗');
+    })
+  }
+
+
 });
