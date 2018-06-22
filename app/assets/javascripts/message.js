@@ -43,7 +43,6 @@ $(function() {
     })
   });
 
-  setInterval(update,5000);
   function update(){
     $.ajax({
       url: '',
@@ -56,17 +55,20 @@ $(function() {
       console.log(id)
       data.messages.forEach(function(message) {
         if ( message.id > id) {
-          console.log(message.id)
           var html = buildHTML(message);
           $('.messages').append(html);
+          $('html, body').animate({scrollTop: $('.messages').height()});
         }
       });
-      $('html, body').animate({scrollTop: $('.messages').height()});
     })
     .fail(function(data){
-      alert('失敗');
+      alert('メッセージの更新ができませんでした')
     })
   }
-
+  $(window).bind("load",function(){
+    if(document.URL.match(/messages/)) {
+        setInterval(update,5000);
+    }
+  })
 
 });
