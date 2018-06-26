@@ -18,6 +18,10 @@ $(function() {
     return html;
   }
 
+  function scroll(){
+    $('html, body').animate({scrollTop: $('.messages').height()});
+  }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -35,7 +39,7 @@ $(function() {
       $('.messages').append(html);
       $('.form__submit ').attr('disabled',false);
       $('#new_message')[0].reset();
-      $('html, body').animate({scrollTop: $('.messages').height()});
+      scroll()
     })
     .fail(function(){
       alert('error');
@@ -44,21 +48,18 @@ $(function() {
   });
 
   function update(){
+    var lastMessageId = Number($('.message:last').attr('id'));
     $.ajax({
-      url: '',
-      dataType: 'json',
-      processData: false,
-      contentType: false
+      url: location.href,
+      type: "GET",
+      data: { id: lastMessageId },
+      dataType: 'json'
     })
     .done(function(data){
-      id = $('.message:last').attr('id');
-      console.log(id)
       data.messages.forEach(function(message) {
-        if ( message.id > id) {
-          var html = buildHTML(message);
-          $('.messages').append(html);
-          $('html, body').animate({scrollTop: $('.messages').height()});
-        }
+        var html = buildHTML(message);
+        $('.messages').append(html);
+        scroll()
       });
     })
     .fail(function(data){
@@ -66,7 +67,7 @@ $(function() {
     })
   }
   $(window).bind("load",function(){
-    if(document.URL.match(/messages/)) {
+    if(document.URL.match(/messages/) && document.URL.match(/groups/)) {
         setInterval(update,5000);
     }
   })
