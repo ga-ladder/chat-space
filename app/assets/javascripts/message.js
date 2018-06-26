@@ -5,7 +5,7 @@ $(function() {
       image_html = `<img class="lower-message__image" src="${message.image}">`;
     }
     var html = `
-      <div class="message" id="${message.id}">
+      <div class="message" data-message-id="${message.id}">
         <div class="upper-message">
           <div class="upper-message__user-name">${message.name}</div>
           <div class="upper-message__date">${message.created_at}</div>
@@ -48,7 +48,8 @@ $(function() {
   });
 
   function update(){
-    var lastMessageId = Number($('.message:last').attr('id'));
+    var lastMessageId = $('.message').last().data('message-id');
+    console.log(lastMessageId);
     $.ajax({
       url: location.href,
       type: "GET",
@@ -67,7 +68,7 @@ $(function() {
     })
   }
   $(window).bind("load",function(){
-    if(document.URL.match(/messages/) && document.URL.match(/groups/)) {
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
         setInterval(update,5000);
     }
   })
