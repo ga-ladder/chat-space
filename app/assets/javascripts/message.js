@@ -49,7 +49,6 @@ $(function() {
 
   function update(){
     var lastMessageId = $('.message').last().data('message-id');
-    console.log(lastMessageId);
     $.ajax({
       url: location.href,
       type: "GET",
