@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  before_action :set_group
 
   def index
   end
@@ -26,6 +25,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    set_group
   end
 
   private
