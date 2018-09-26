@@ -4,11 +4,11 @@
 
 -# タイトルバー
 .chat
-  = render 'group'
+  = render 'shared/group'
 
   -#<!-- コメント表示 -->
   .messages
-    = render partial: 'message', collection: @messages
+    = render partial: 'shared/message', collection: @messages
 
   -#<!-- コメント書くところ -->
   .form
