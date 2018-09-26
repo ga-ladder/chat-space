@@ -8,21 +8,15 @@
   background-color: #ddd;
   &__input {
     padding: 0 10px;
-    color: $text-color;
+    color: colors(text-color);
     height: 50px;
     width: calc(-155px + 100%);
     float: left;
     border: none;
   }
-     .fa-image {
-        padding-top: 20px;
-        height: 50px;
-        position: absolute;
-        right: 180px;
-      }
   &__button {
     width: 100px;
-    background-color: $button-color;
+    background-color: colors(button-color);
     height: 50px;
     margin-left: 15px;
     padding: 0 30px;
@@ -30,4 +24,10 @@
     color: white;
     border: none;
   }
+}
+.fa-image {
+  padding-top: 20px;
+  height: 50px;
+  position: absolute;
+  right: 180px;
 }

@@ -1,0 +1,21 @@
+// color
+$colors: (
+    side_blue_dark: #253141,
+    side_blue_light: #2f3e51,
+    light_blue: #38AEF0,
+    light_gray: #999,
+    black: #434a54,
+    alert_orange: #F35500,
+    glay: #DDDDDD,
+    text-color: #454a54,
+    button-color: #38aef0,
+    background: #FAFAFA,
+);
+
+// size
+$sidebar_width: 300px;
+
+
+@function colors($key) {
+    @return map-get($colors, $key);
+}
